@@ -16,7 +16,7 @@ INSERT INTO employee (eid,first_name,last_name,gender,dob,phone,email,start_date
 (114,"Tarik","Coolguy",0,"1995-07-29","1-899-576-9912","tarik@gmail.com","2011-11-29","2014-07-08","doctor"),
 (115,"Edan","Weeks",1,"1962-08-05","1-382-124-7929","sollicitudin.adipiscing.ligula@ornarefacilisiseget.edu","2014-02-21","","nurse"),
 (116,"Ocean","Barlow",0,"1969-12-27","1-970-423-1665","euismod@doloregestasrhoncus.ca","1998-09-01","","nurse"),
-(117,"Raja","Mcdowell",0,"1982-03-13","1-280-666-5439","sit.amet.risus@purusinmolestie.co.uk","","nurse"),
+(117,"Raja","Mcdowell",0,"1982-03-13","1-280-666-5439","sit.amet.risus@purusinmolestie.co.uk","1998-09-01","","nurse"),
 (118,"Risa","Brady",1,"1960-04-21","1-697-706-1425","eros@amet.co.uk","2002-06-22","","nurse"),
 (119,"Celeste","Alvarez",0,"1998-03-10","1-478-266-4522","lacus.Nulla.tincidunt@ametmetusAliquam.co.uk","2012-05-29","","nurse"),
 (120,"Aspen","Greer",0,"1962-04-09","1-141-317-6757","elit@velit.ca","2007-02-08","2001-07-18","admin"),
