@@ -18,4 +18,14 @@ eid INT(4) NOT NULL PRIMARY KEY,
 fee DECIMAL(7,2), 
 specialty VARCHAR(30)
 );
--- Missing Patient --
+CREATE TABLE patient(
+med_num INT(4) NOT NULL PRIMARY KEY, 
+gender bool,
+phone varchar(20),
+first_name VARCHAR(50) NOT NULL, 
+last_name VARCHAR(50) NOT NULL,
+postal_code VARCHAR(10),
+country VARCHAR(52), 
+civ_number VARCHAR(100),
+city VARCHAR(58)
+);
