@@ -1,4 +1,4 @@
-INSERT INTO visit (med_num,doc_id,datetime,admin_reason,diagnosis,treatment,discharged) VALUES 
+INSERT INTO visit (med_num,doc_id,date_time,admin_reason,diagnosis,treatment,discharged) VALUES 
 (1016,109,"2015-02-08 03:30:08","vel,","sapien","risus","2015-07-20 04:37:52"),
 (1012,107,"2015-01-17 15:56:47","ac","Vivamus","tristique","2015-03-31 16:44:12"),
 (1004,107,"2016-08-28 11:17:46","leo.","ultrices","sit","2016-09-03 08:21:10"),
