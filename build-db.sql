@@ -342,4 +342,6 @@ INSERT INTO visit (med_num,eid,date_time,admin_reason,diagnosis,treatment,discha
 (1003,103,"2017-02-01 12:15:17","Fear of flying","Cancer","Anti-virals","2017-02-16 07:29:07"),
 (1016,113,"2015-01-08 22:37:28","Can't see anything","Heart-disease","Got get a new heart","2015-01-09 22:25:38"),
 (1009,101,"2017-02-09 17:30:29","Sharp pain across left arm", "Heart-disease", "Not much we can do, ma'am","2017-02-09 18:30:29"),
-(1014,105,"2017-02-11 22:00:17","Coughing profusely", "SARS", "Get me a Coke, stat.", "2017-03-21 09:08:27");
+(1014,105,"2017-02-11 22:00:17","Coughing profusely", "SARS", "Get me a Coke, stat.", "2017-03-21 09:08:27"),
+(1016,101,"2017-01-28 11:11:11","Heart attack","Heart-disease","Quadruple bypass surgery","2017-02-14 12:30:31"),
+(1012,101,"2017-01-01 12:12:12","Chest pain","Heart-disease","Prescribed daily asprin usage","2017-01-02 08:13:12");
