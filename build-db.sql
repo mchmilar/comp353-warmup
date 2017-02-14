@@ -4,9 +4,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 USE fsc353_4 ;
 
--- -----------------------------------------------------
--- Table employee
--- -----------------------------------------------------
+#######################################################
+## Table employee
+#######################################################
 DROP TABLE IF EXISTS employee ;
 
 CREATE TABLE IF NOT EXISTS employee (
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS employee (
   start_date DATE NULL,
   end_date DATE NULL,
   job_title VARCHAR(45) NULL,
-  civic_number VARCHAR(100) NULL,
+  civic_num VARCHAR(100) NULL,
   city VARCHAR(58) NULL,
   country VARCHAR(52) NULL,
   postal_code VARCHAR(7) NULL,
@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS employee (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table patient
--- -----------------------------------------------------
+## #####################################################
+## Table patient
+#######################################################
 DROP TABLE IF EXISTS patient ;
 
 CREATE TABLE IF NOT EXISTS patient (
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS patient (
   gender TINYINT(1) NULL,
   dob DATE NULL,
   phone VARCHAR(20) NULL,
-  civic_number VARCHAR(100) NULL,
+  civic_num VARCHAR(100) NULL,
   city VARCHAR(45) NULL,
   country VARCHAR(52) NULL,
   postal_code VARCHAR(7) NULL,
@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS patient (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table doctor
--- -----------------------------------------------------
+#######################################################
+## Table doctor
+#######################################################
 DROP TABLE IF EXISTS doctor ;
 
 CREATE TABLE IF NOT EXISTS doctor (
@@ -66,9 +66,9 @@ CREATE TABLE IF NOT EXISTS doctor (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table visit
--- -----------------------------------------------------
+#######################################################
+## Table visit
+#######################################################
 DROP TABLE IF EXISTS visit ;
 
 CREATE TABLE IF NOT EXISTS visit (
@@ -94,9 +94,9 @@ CREATE TABLE IF NOT EXISTS visit (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table department
--- -----------------------------------------------------
+#######################################################
+## Table department
+#######################################################
 DROP TABLE IF EXISTS department ;
 
 CREATE TABLE IF NOT EXISTS department (
@@ -107,9 +107,9 @@ CREATE TABLE IF NOT EXISTS department (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table administrator
--- -----------------------------------------------------
+#######################################################
+## Table administrator
+#######################################################
 DROP TABLE IF EXISTS administrator ;
 
 CREATE TABLE IF NOT EXISTS administrator (
@@ -130,9 +130,9 @@ CREATE TABLE IF NOT EXISTS administrator (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table employs
--- -----------------------------------------------------
+#######################################################
+## Table employs
+#######################################################
 DROP TABLE IF EXISTS employs ;
 
 CREATE TABLE IF NOT EXISTS employs (
@@ -153,9 +153,9 @@ CREATE TABLE IF NOT EXISTS employs (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table nurse
--- -----------------------------------------------------
+#######################################################
+## Table nurse
+#######################################################
 DROP TABLE IF EXISTS nurse ;
 
 CREATE TABLE IF NOT EXISTS nurse (
@@ -176,9 +176,9 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
----------------------------------------------------------
--- Insert Employees
----------------------------------------------------------
+#########################################################
+## Insert Employees
+#########################################################
 INSERT INTO employee (eid,first_name,last_name,gender,dob,phone,email,start_date,end_date,job_title) VALUES 
 (100,"Kalia","Drake",0,"2000-07-08","1-110-175-5108","Maecenas@magnaa.net","1999-12-21",null,"doctor"),
 (101,"Tatiana","Sykes",0,"2005-05-06","1-239-473-5797","pede@ipsumcursus.ca","2015-09-27",null,"doctor"),
@@ -207,25 +207,25 @@ INSERT INTO employee (eid,first_name,last_name,gender,dob,phone,email,start_date
 (124,"Jackie","Nuc",0,"1984-04-27","1-780-555-4344","jackienuc@gmail.com","2011-01-01",null,"admin");
 
 
----------------------------------------------------------
--- Insert Patients
----------------------------------------------------------
+#########################################################
+## Insert Patients
+#########################################################
 
 INSERT INTO patient (med_num,first_name,last_name,gender,dob,phone,civic_num,city,country,postal_code) VALUES (1000,"Howard","Palmer",1,"2004-02-01","1-389-575-6504","Ap #763-3346 Vitae Road","Whitehorse","Canada","S8P 5C8"),(1001,"Alyssa","Newman",0,"1988-10-25","1-611-623-8963","Ap #317-9501 Inn St.","Pugwash","Canada","N2E 4K7"),(1002,"Cheryl","Sandoval",1,"1979-11-07","1-751-844-7161","P.O. Box 990, 8429 Vulputate Avenue","Whitehorse","Canada","A5W 1X6"),(1003,"Petra","Crosby",1,"1962-10-09","1-929-272-6164","403-971 Nec St.","Rigolet","Canada","H6Y 6R8"),(1004,"Zeph","Dawson",0,"1979-07-03","1-970-695-3468","Ap #327-5220 Non Rd.","Brandon","Canada","K5V 1H7"),(1005,"Portia","Conrad",1,"1997-04-17","1-324-810-3869","5332 Sed St.","Whitehorse","Canada","A5R 6H6"),(1006,"Madeline","Jefferson",0,"1982-11-13","1-417-162-2565","P.O. Box 919, 1934 Vestibulum Road","Watson Lake","Canada","X6N 4G9"),(1007,"Eve","Woodard",1,"1985-11-06","1-892-189-5427","P.O. Box 692, 5629 Sodales. Avenue","Coleville Lake","Canada","X5N 9G3"),(1008,"Ashely","Casey",1,"1983-10-29","1-771-528-2056","823 Est. Avenue","Bonavista","Canada","E6A 2C4"),(1009,"Blossom","Flores",1,"1962-04-11","1-506-810-3179","6569 Tortor, Rd.","Harbour Grace","Canada","E6Y 2W0"),(1010,"Iola","Combs",0,"1961-12-22","1-733-107-7553","Ap #259-4885 A, St.","Delta","Canada","G4B 5Z1"),(1011,"Honorato","Preston",0,"1979-03-31","1-860-382-0059","839-1732 Tellus St.","Smithers","Canada","M3N 6X4"),(1012,"Jackson","Patel",0,"1963-08-13","1-144-117-2407","1493 Ornare, Avenue","Rouyn-Noranda","Canada","K0L 7W7"),(1013,"Ivana","Hendricks",1,"1996-08-04","1-446-681-3986","3312 Nunc Av.","Bonnyville","Canada","N8B 4R6"),(1014,"Upton","Turner",1,"1984-03-13","1-358-942-8005","P.O. Box 307, 2899 Sed Ave","Watson Lake","Canada","C7R 3R6"),(1015,"Reuben","Burgess",1,"1992-09-23","1-836-553-6520","891-5339 Nullam Ave","Beausejour","Canada","A5Z 6L3"),(1016,"Shaeleigh","Harvey",1,"1983-05-03","1-551-792-2986","Ap #829-4479 Eu, Rd.","Lourdes","Canada","A8Y 3K4");
 
 
----------------------------------------------------------
--- Insert Departments
----------------------------------------------------------
+#########################################################
+## Insert Departments
+#########################################################
 
 INSERT INTO department (did,dep_name,num_beds) VALUES (1,"ER",16),(2,"Surgery",81),(3,"Oncology",97),(4,"Burn Unit",76),(5,"Radiology",37);
 
 
----------------------------------------------------------
--- Insert Doctors
----------------------------------------------------------
+#########################################################
+## Insert Doctors
+#########################################################
 
-INSERT INTO doctor (eid, fees, specialty) VALUES
+INSERT INTO doctor (eid, fee, specialty) VALUES
 (100, 999.50, "Flu"),
 (101, 900, "Cardiologist"),
 (102, 850, "Lung Cancer"),
@@ -243,9 +243,9 @@ INSERT INTO doctor (eid, fees, specialty) VALUES
 (114, 245.50, "X-Rays");
 
 
----------------------------------------------------------
--- Insert Nurses
----------------------------------------------------------
+#########################################################
+## Insert Nurses
+#########################################################
 
 INSERT INTO nurse (eid, fee, specialty) VALUES
 (115, 99.50, "Triage"),
@@ -255,9 +255,9 @@ INSERT INTO nurse (eid, fee, specialty) VALUES
 (119, 175, "X-Rays");
 
 
----------------------------------------------------------
--- Insert Employs
----------------------------------------------------------
+#########################################################
+## Insert Employs
+#########################################################
 
 
 INSERT INTO employs (eid, did) VALUES 
@@ -278,22 +278,22 @@ INSERT INTO employs (eid, did) VALUES
 (114, 5);
 
 
----------------------------------------------------------
--- Insert Administrator
----------------------------------------------------------
+#########################################################
+## Insert Administrator
+#########################################################
 
-INSERT INTO administrator (doc_id, did) VALUES
+INSERT INTO administrator (eid, did) VALUES
 (100, 1),
 (101, 2),
 (102, 3),
 (103, 4),
 (104, 5);
 
----------------------------------------------------------
--- Insert Visits
----------------------------------------------------------
+#########################################################
+## Insert Visits
+#########################################################
 
-INSERT INTO visit (med_num,doc_id,date_time,admin_reason,diagnosis,treatment,discharged) VALUES 
+INSERT INTO visit (med_num,eid,date_time,admin_reason,diagnosis,treatment,discharged) VALUES 
 (1016,109,"2015-02-08 03:30:08","Coughing","Influenza","Rest","2015-07-20 04:37:52"),
 (1012,107,"2015-01-17 15:56:47","Broken leg","SARS","Rest","2015-03-31 16:44:12"),
 (1004,107,"2016-08-28 11:17:46","Loss of eyesight","Heart Disease","Drink water","2016-09-03 08:21:10"),
