@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS employee (
   email VARCHAR(100) NULL,
   start_date DATE NULL,
   end_date DATE NULL,
-  job_title VARCHAR(45) NULL,
+  
   civic_num VARCHAR(100) NULL,
   city VARCHAR(58) NULL,
   country VARCHAR(52) NULL,
