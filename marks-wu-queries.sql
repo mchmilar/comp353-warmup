@@ -14,25 +14,17 @@ FROM 	visit JOIN patient USING(med_num)
 WHERE 	med_num = 1003;
 
 #4 Given a patient’s Medicare ID, determine how much s/he has paid for the visits since the beginning of “this” year.
-SELECT first_name, last_name, total_paid
-FROM patient
-	JOIN
-		(SELECT med_num, sum(fee) as total_paid
-		FROM 		visit JOIN doctor USING(eid)
-		WHERE 		YEAR(discharged) = YEAR(CURDATE()) 
-		GROUP BY 	med_num
-		) AS visit_fee USING(med_num);
+SELECT first_name, last_name, sum(fee) as total_paid
+FROM 		(visit JOIN doctor USING(eid)) JOIN patient USING(med_num)
+WHERE 		YEAR(discharged) = YEAR(CURDATE()) 
+GROUP BY 	med_num;
 
 #5 List heart patients admitted/visited at least twice.
-SELECT first_name, last_name, num_visits
-FROM patient
-	JOIN (
-		SELECT 		med_num, count(diagnosis) as num_visits
-        FROM 		visit
-        WHERE 		diagnosis='Heart-disease'
-        GROUP BY 	med_num
-        HAVING 		num_visits >= 2
-        ) AS visit_count USING(med_num);
+SELECT 		first_name, last_name, count(diagnosis) as num_visits
+FROM 		visit JOIN patient USING(med_num)
+WHERE 		diagnosis='Heart-disease'
+GROUP BY 	med_num
+HAVING 		num_visits > 1
 
 #6 List patient’s first name, last name, phone, date admitted, date discharged for all
 #  admitted patients grouped by special disease, e.g., Cancer, Heart disease, HIV, SARS, etc.
