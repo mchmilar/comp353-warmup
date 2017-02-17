@@ -14,7 +14,7 @@ FROM 	visit JOIN patient USING(med_num)
 WHERE 	med_num = 1003;
 
 #4 Given a patient’s Medicare ID, determine how much s/he has paid for the visits since the beginning of “this” year.
-SELECT first_name, last_name, sum(fee) as total_paid
+SELECT 		first_name, last_name, sum(fee) as total_paid
 FROM 		(visit JOIN doctor USING(eid)) JOIN patient USING(med_num)
 WHERE 		YEAR(discharged) = YEAR(CURDATE()) 
 GROUP BY 	med_num;

@@ -50,21 +50,21 @@ DEFAULT CHARACTER SET = latin1;
 
 
 ## #####################################################
-## Table administrator
+## Table dept_aministrator
 ## #####################################################
-DROP TABLE IF EXISTS administrator ;
+DROP TABLE IF EXISTS dept_aministrator ;
 
-CREATE TABLE IF NOT EXISTS administrator (
+CREATE TABLE IF NOT EXISTS dept_aministrator (
   eid INT(3) NOT NULL,
   did INT(2) NULL DEFAULT NULL,
   PRIMARY KEY (eid),
-  INDEX fk_administrator_2_idx (did ASC),
-  CONSTRAINT fk_administrator_1
+  INDEX fk_dept_aministrator_2_idx (did ASC),
+  CONSTRAINT fk_dept_aministrator_1
     FOREIGN KEY (eid)
     REFERENCES employee (eid)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT fk_administrator_2
+  CONSTRAINT fk_dept_aministrator_2
     FOREIGN KEY (did)
     REFERENCES department (did)
     ON DELETE CASCADE
@@ -103,6 +103,22 @@ CREATE TABLE IF NOT EXISTS nurse (
   specialty VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (eid),
   CONSTRAINT fk_nurse_1
+    FOREIGN KEY (eid)
+    REFERENCES employee (eid)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+## #####################################################
+## Table admin_staff
+## #####################################################
+DROP TABLE IF EXISTS admin_staff ;
+
+CREATE TABLE IF NOT EXISTS admin_staff (
+  eid INT(3) NOT NULL,
+  PRIMARY KEY (eid),
+  CONSTRAINT fk_admin_staff_1
     FOREIGN KEY (eid)
     REFERENCES employee (eid)
     ON DELETE CASCADE
@@ -258,12 +274,19 @@ INSERT INTO nurse (eid, fee, specialty) VALUES
 (118, 209, "Burns"),
 (119, 175, "X-Rays");
 
+#########################################################
+## Insert admin_staff
+#########################################################
+
+INSERT INTO admin_staff VALUES
+(120), (121), (122), (123), (124);
+
 
 #########################################################
-## Insert Administrator
+## Insert dept_aministrator
 #########################################################
 
-INSERT INTO administrator (eid, did) VALUES
+INSERT INTO dept_aministrator (eid, did) VALUES
 (100, 1),
 (101, 2),
 (102, 3),
