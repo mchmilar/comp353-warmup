@@ -308,4 +308,5 @@ INSERT INTO visit (med_num,eid,date_time,admin_reason,diagnosis,treatment,discha
 (1009,101,"2017-02-09 17:30:29","Sharp pain across left arm", "Heart-disease", "Not much we can do, ma'am","2017-02-09 18:30:29"),
 (1014,105,"2017-02-11 22:00:17","Coughing profusely", "SARS", "Get me a Coke, stat.", "2017-03-21 09:08:27"),
 (1016,101,"2017-01-28 11:11:11","Heart attack","Heart-disease","Quadruple bypass surgery","2017-02-14 12:30:31"),
-(1012,101,"2017-01-01 12:12:12","Chest pain","Heart-disease","Prescribed daily asprin usage","2017-01-02 08:13:12");
+(1012,101,"2017-01-01 12:12:12","Chest pain","Heart-disease","Prescribed daily asprin usage","2017-01-02 08:13:12"),
+(1012,101,"2017-02-01 12:12:12","Chest pain","Heart-disease","Prescribed daily asprin usage again","2017-02-02 08:13:12");
