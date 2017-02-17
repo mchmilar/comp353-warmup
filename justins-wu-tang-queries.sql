@@ -18,7 +18,7 @@ where p.med_num = 1001 and p.med_num = v.med_num;
 #4. 
 select p.med_num, sum(d.fee) as FeesThisYear
 from doctor d, patient p, visit v
-where p.med_num = v.med_num and v.eid = d.eid and v.date_time > '2017-01-01';
+where p.med_num = v.med_num and v.eid = d.eid and v.date_time > '2017-01-01'
 group by p.med_num;
 
 #5.
