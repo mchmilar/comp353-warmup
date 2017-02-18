@@ -11,7 +11,8 @@ WHERE 	city='Montreal' AND start_date >= '2012-01-01';
 #3 Given a patient’s Medicare ID, list the Medical Report of that patient.
 SELECT 	admitted, first_name, last_name, admin_reason, diagnosis, treatment
 FROM 	visit JOIN patient USING(med_num)
-WHERE 	med_num = 1003;
+WHERE 	med_num = 1003
+ORDER BY admitted;
 
 #4 Given a patient’s Medicare ID, determine how much s/he has paid for the visits since the beginning of “this” year.
 SELECT 		first_name, last_name, sum(fee) as total_paid
