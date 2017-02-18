@@ -156,12 +156,12 @@ DROP TABLE IF EXISTS visit ;
 CREATE TABLE IF NOT EXISTS visit (
   med_num INT(4) NOT NULL,
   eid INT(3) NOT NULL,
-  date_time DATETIME NOT NULL,
+  admitted DATETIME NOT NULL,
   admin_reason VARCHAR(500) NULL DEFAULT NULL,
   diagnosis VARCHAR(500) NULL DEFAULT NULL,
   treatment VARCHAR(200) NULL DEFAULT NULL,
   discharged DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (med_num, eid, date_time),
+  PRIMARY KEY (med_num, eid, admitted),
   INDEX fk_visit_2_idx (eid ASC),
   CONSTRAINT fk_visit_1
     FOREIGN KEY (med_num)
@@ -188,21 +188,21 @@ INSERT INTO employee VALUES
 (102,3,'Penelope','Scott',0,'2003-09-16','1-271-490-7841','et@justoProin.net','1997-03-29',NULL,'300 bishop','Montreal','Canada','H3H1H1'),
 (103,4,'Kermit','Benson',1,'1965-01-15','1-357-180-4320','arcu@aliquam.org','2004-10-12',NULL,'400 bishop','Montreal','Canada','H3H1H1'),
 (104,5,'Levi','Dejesus',1,'1963-11-20','1-292-427-3099','sem.Nulla@orciUt.ca','2000-11-29',NULL,'111 mckay','Montreal','Canada','H3H1H7'),
-(105,1,'Hasad','Diaz',1,'1991-02-23','1-288-403-2282','lorem.eget.mollis@egestasFuscealiquet.org','2016-02-26',NULL,'222 mckay','Montreal','Canada','H3L9S3'),
+(105,1,'Hasad','Diaz',1,'1991-02-23','1-288-403-2282','lorems@aliquet.org','2016-02-26',NULL,'222 mckay','Montreal','Canada','H3L9S3'),
 (106,2,'Cora','Pratt',0,'1990-02-15','1-619-264-8381','ac@tincidunt.edu','1999-06-08',NULL,'333 mckay','Montreal','Canada','H3H1H4'),
-(107,3,'Evan','Richard',1,'1996-09-12','1-312-227-4544','consectetuer.euismod@Etiamvestibulum.org','2002-12-29',NULL,'444 mckay','Montreal','Canada','H3H1H9'),
+(107,3,'Evan','Richard',1,'1996-09-12','1-312-227-4544','consectetuer@ibulum.org','2002-12-29',NULL,'444 mckay','Montreal','Canada','H3H1H9'),
 (108,4,'Erica','Newman',0,'1984-08-29','1-650-466-4812','placerat.orci@quis.com','2013-07-31',NULL,'555 mckay','Montreal','Canada','H2K1H1'),
 (109,5,'Justin','Whatley',0,'1985-07-29','1-650-576-9912','justin@gmail.com','2011-11-29',NULL,'123 acme','Montreal','Canada','H9H1H1'),
 (110,1,'Jaza','Piat',1,'1990-02-23','1-388-567-2282','jaza@gmail.com','2013-05-26','2014-07-07','234 acme','Montreal','Canada','H2S1H1'),
 (111,2,'Laura','Leddy',0,'1987-02-15','1-555-264-8381','laura@tincidunt.edu','2009-06-08','2015-03-02','345 acme','Montreal','Canada','H6H1H1'),
-(112,3,'Jon','Priar',1,'1992-09-12','1-666-227-4544','jon@Etiamvestibulum.org','2002-12-29','2016-01-01','456 acme','Montreal','Canada','H2H1H1'),
+(112,3,'Jon','Priar',1,'1992-09-12','1-666-227-4544','jon@stibulum.org','2002-12-29','2016-01-01','456 acme','Montreal','Canada','H2H1H1'),
 (113,4,'Sophie','Gonzalez',0,'1989-08-29','1-786-166-4812','laura@quis.com','2014-06-30','2015-02-16','567 acme','Montreal','Canada','H5N1H1'),
 (114,5,'Tarik','Coolguy',0,'1995-07-29','1-899-576-9912','tarik@gmail.com','2011-11-29','2014-07-08','678 acme','Montreal','Canada','H2J1H1'),
-(115,1,'Edan','Weeks',1,'1962-08-05','1-382-124-7929','sollicitudin.adipiscing.ligula@ornarefacilisiseget.edu','2014-02-21',NULL,'111 oiler','Edmonton','Canada','H2Y1H1'),
+(115,1,'Edan','Weeks',1,'1962-08-05','1-382-124-7929','sollicitudin@lisiseget.edu','2014-02-21',NULL,'111 oiler','Edmonton','Canada','H2Y1H1'),
 (116,2,'Ocean','Barlow',0,'1969-12-27','1-970-423-1665','euismod@doloregestasrhoncus.ca','1998-09-01',NULL,'987 queen','Montreal','Canada','H3H1H3'),
 (117,3,'Raja','Mcdowell',0,'1982-03-13','1-280-666-5439','sit.amet.risus@purusinmolestie.co.uk','1998-09-01',NULL,'876 queen','Montreal','Canada','H3H1H2'),
 (118,4,'Risa','Brady',1,'1960-04-21','1-697-706-1425','eros@amet.co.uk','2002-06-22',NULL,'765 queen','Montreal','Canada','H3H1H8'),
-(119,5,'Celeste','Alvarez',0,'1998-03-10','1-478-266-4522','lacus.Nulla.tincidunt@ametmetusAliquam.co.uk','2012-05-29',NULL,'654 queen','Montreal','Canada','H2R1H1'),
+(119,5,'Celeste','Alvarez',0,'1998-03-10','1-478-266-4522','lacus@Aliquam.co.uk','2012-05-29',NULL,'654 queen','Montreal','Canada','H2R1H1'),
 (120,1,'Aspen','Greer',0,'1962-04-09','1-141-317-6757','elit@velit.ca','2007-02-08','2001-07-18','543 queen','Montreal','Canada','H4H1H1'),
 (121,2,'Ulric','Richard',1,'1964-08-12','1-445-841-0796','Nullam@adipiscing.net','2009-03-11',NULL,'432 queen','Montreal','Canada','H5H1H1'),
 (122,3,'Jocelyn','Nielsen',0,'1988-02-03','1-785-707-6162','dictum.eu@fringillamilacinia.org','1999-06-08',NULL,'321 queen','Montreal','Canada','H3H1H5'),
@@ -297,7 +297,7 @@ INSERT INTO dept_aministrator (eid, did) VALUES
 ## Insert Visits
 #########################################################
 
-INSERT INTO visit (med_num,eid,date_time,admin_reason,diagnosis,treatment,discharged) VALUES 
+INSERT INTO visit (med_num,eid,admitted,admin_reason,diagnosis,treatment,discharged) VALUES 
 (1016,109,"2015-02-08 03:30:08","Coughing","Influenza","Rest","2015-07-20 04:37:52"),
 (1012,107,"2015-01-17 15:56:47","Broken leg","SARS","Rest","2015-03-31 16:44:12"),
 (1004,107,"2016-08-28 11:17:46","Loss of eyesight","Heart-disease","Drink water","2016-09-03 08:21:10"),
