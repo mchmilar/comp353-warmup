@@ -25,19 +25,13 @@ SELECT 		first_name, last_name, count(diagnosis) as num_visits
 FROM 		visit JOIN patient USING(med_num)
 WHERE 		diagnosis='Heart-disease'
 GROUP BY 	med_num
-HAVING 		num_visits > 1
+HAVING 		num_visits > 1;
 
 #6 List patient’s first name, last name, phone, date admitted, date discharged for all
 #  admitted patients grouped by special disease, e.g., Cancer, Heart disease, HIV, SARS, etc.
 SELECT 		diagnosis, first_name, last_name, phone, admitted, discharged 
 FROM 		visit JOIN patient USING(med_num)
 ORDER BY 	diagnosis;
-
-#6b selecting a specific disease. I wasn't sure which one they want.
-SELECT 	diagnosis, first_name, last_name, phone, admitted, discharged 
-FROM 	visit JOIN patient USING(med_num)
-WHERE 	diagnosis='SARS';
-
 
 #7 Calculate the average age of all patients admitted into the Hospital.
 SELECT 	avg(TIMESTAMPDIFF(YEAR, dob, CURDATE())) AS average_age
